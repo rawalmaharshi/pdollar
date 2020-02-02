@@ -1,0 +1,14 @@
+{
+  "name": "pdollar",
+  "version": "1.0.0",
+  "description": "JavaScript (Node.js) implementation of $P algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maharshi Rawal",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^15.1.0"
+  }
+}
