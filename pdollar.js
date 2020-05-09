@@ -311,7 +311,7 @@ const eventstreamFileName = argv.e;
 
 //If an argument of gesture file is entered, add given gesture to the gestures file
 if (gestureFileName) {
-	fs.readFile(`gestureFiles/${gestureFileName}`, 'utf8', (err, data) => {
+	fs.readFile(gestureFileName, 'utf8', (err, data) => {
 		if (err) {
 			throw err;
 		}
@@ -373,7 +373,7 @@ if(eventstreamFileName) {
 	}	
 	// PDollarRecognizer.returnGestures();
 
-	fs.readFile(`eventFiles/${eventstreamFileName}`, 'utf8', (err, data) => {
+	fs.readFile(eventstreamFileName, 'utf8', (err, data) => {
 	    if (err) {
 	        throw err;
 	    }
@@ -404,6 +404,8 @@ if(eventstreamFileName) {
 			if (line === "RECOGNIZE") {
 				let answer = PDollarRecognizer.Recognize(arrayPoints);
 				console.log(`Gesture: ${answer.Name}\nRecognition Score: ${answer.Score}`);
+				arrayPoints = [];
+				strokeId = 1;
 				}
 			}
 	});
